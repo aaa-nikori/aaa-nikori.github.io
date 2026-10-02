@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="North Drive Backupは、設定したGoogle DriveのMarkdownファイルをWindows PCへ世代保存する、個人利用の準備中のバックアップツールです。">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>North Drive Backup | アプリ説明</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">N</span>aaa-nikori</a>
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a href="../index.html">ホーム</a>
+        <a href="index.html" aria-current="page">アプリ説明</a>
+        <a href="privacy.html">プライバシー</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <div class="hero compact">
+      <p class="eyebrow" lang="en">Local backup for Windows</p>
+      <h1 lang="en">North Drive Backup</h1>
+      <p class="lead">Google Driveの必要なファイルを、手元のPCにも。<br>設定したMarkdownファイルを、内容を検証して世代ごとに保存します。</p>
+      <span class="badge">個人利用に向けて準備中</span>
+    </div>
+    <div class="note reading">
+      <p>現在は個人利用の準備段階です。継続運用やGoogle OAuthの本番設定の完了を示すものではありません。第三者向けのサービス提供・アプリ配布は行っていません。</p>
+    </div>
+    <section class="section" aria-labelledby="features-title">
+      <h2 id="features-title">できること</h2>
+      <div class="features">
+        <div class="feature"><span class="number" aria-hidden="true">01</span><h3>対象を限定して取得</h3><p>事前に設定したファイルIDだけを読み取ります。現在の実装は固定した10件のMarkdownファイルが対象で、フォルダ全体を自動で探索しません。</p></div>
+        <div class="feature"><span class="number" aria-hidden="true">02</span><h3>検証して世代保存</h3><p>サイズ・ハッシュ・取得前後の情報を検査し、元の内容を加工せず保存します。内容が同じ場合は新しい世代を増やしません。</p></div>
+        <div class="feature"><span class="number" aria-hidden="true">03</span><h3>ローカルへ復元</h3><p>正常な保存世代を検証し、新しい別フォルダへ復元します。Google Driveへの書き込みやクラウドへの復元は行いません。</p></div>
+      </div>
+    </section>
+    <section class="section reading" aria-labelledby="permission-title">
+      <h2 id="permission-title">Google Driveの権限</h2>
+      <p>要求する権限は読み取り専用の <code>drive.readonly</code> です。このGoogle側の権限は、Drive全体の閲覧・ダウンロードを可能にします。アプリ内の対象設定で取得先を限定しても、Google側の権限範囲そのものは狭くなりません。</p>
+      <p>実装は対象IDのメタデータとファイル内容の読み取りだけを行います。Driveのファイル作成・変更・削除・共有設定の変更は行いません。認可は利用者のPCのブラウザで行い、このサイトでは認証情報を受け取りません。</p>
+    </section>
+    <section class="section reading" aria-labelledby="storage-title">
+      <h2 id="storage-title">保存と管理</h2>
+      <p>文書とメタデータはローカルに保存します。文書の保存内容をアプリ独自に暗号化する機能はありません。認証情報は文書と別に、Windows CurrentUser DPAPIで暗号化して保存します。</p>
+      <p>保存世代や失敗時の隔離データは自動削除しません。処理状況やエラーコードのローカル記録も残るため、保存容量と保存先のアクセス権は利用者が管理する必要があります。同期ソフトが保存先を同期する場合、そのソフトによる転送も考慮してください。</p>
+      <p class="small">ファイルの検証は行いますが、あらゆる障害からの保護を保証するものではありません。保存先と元データが同じ物理媒体にある場合、その媒体の故障への対策にはなりません。</p>
+      <div class="actions"><a class="button" href="privacy.html">データの扱いを確認する</a><a href="../index.html">ツール一覧へ</a></div>
+    </section>
+    <section class="section reading" aria-labelledby="author-title">
+      <h2 id="author-title">作者の公開プロフィール</h2>
+      <p><a href="https://github.com/aaa-nikori">aaa-nikori（GitHub）</a>を連絡先の候補として掲載しています。専用の問い合わせ機能はありません。認証情報や文書の内容を公開の場に投稿しないでください。</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><p>aaa-nikori · North Drive Backup</p><a href="privacy.html">プライバシーポリシー</a></div></footer>
+</body>
+</html>
